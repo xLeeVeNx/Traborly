@@ -1,0 +1,14 @@
+.header {
+  padding: 20px;
+  background-color: #000000;
+  grid-column: span 2; }
+
+.logo {
+  width: 100px;
+  height: 100px; }
+  .logo__image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover; }
+
+/*# sourceMappingURL=Header.css.map */

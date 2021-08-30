@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACE,cAAQ;EACN,MAAM,EAAE,QAAQ;EAEhB,OAAO,EAAE,KAAK;EAEd,gBAAgB,EAAE,WAAW;EAC7B,KAAK,EAAE,OAAO;EAEd,MAAM,EAAE,IAAI;EACZ,eAAe,EAAE,IAAI;EAErB,qBAAS;IACP,KAAK,EAAE,IAAI",
+"sources": ["DialogsItem.scss"],
+"names": [],
+"file": "DialogsItem.css"
+}

@@ -1,0 +1,17 @@
+.dialogs {
+  &__item {
+    margin: 5px 10px;
+
+    display: block;
+
+    background-color: transparent;
+    color: #FFFFFF;
+
+    border: none;
+    text-decoration: none;
+
+    &.active {
+      color: gold;
+    }
+  }
+}

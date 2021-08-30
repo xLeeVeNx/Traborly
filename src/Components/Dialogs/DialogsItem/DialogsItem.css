@@ -1,0 +1,11 @@
+.dialogs__item {
+  margin: 5px 10px;
+  display: block;
+  background-color: transparent;
+  color: #FFFFFF;
+  border: none;
+  text-decoration: none; }
+  .dialogs__item.active {
+    color: gold; }
+
+/*# sourceMappingURL=DialogsItem.css.map */
