@@ -1,7 +1,8 @@
 import React from 'react';
+
 import UserItem from './UserItem/UserItem';
 
-const User: React.FC = () => {
+export const User: React.FC = () => {
     return (
         <div className="profile__user">
             <img className="profile__user-img"
@@ -19,5 +20,3 @@ const User: React.FC = () => {
         </div>
     );
 };
-
-export default User;
