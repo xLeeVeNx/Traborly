@@ -1,14 +1,14 @@
-// Import libs
+// Import from libs
 import React from 'react';
 
 // Import styles
 import './Post.scss';
 
 // Import components
-import PostItem from './PostItem/PostItem';
+import { PostItem } from './PostItem/PostItem';
 
 // Import interfaces
-import { IPostProps } from '../../../Interface/Interface';
+import { IPostProps } from '../../../interface/Interfaces';
 
 // Main code
 export const Post: React.FC<IPostProps> = ({PostItemData}) => {
@@ -18,7 +18,11 @@ export const Post: React.FC<IPostProps> = ({PostItemData}) => {
 			<textarea className="profile__post-msg" />
 			<button className="profile__post-btn" type="submit">Send</button>
 			<div className="profile__post-items">
-				{ PostItemData.map(item => <PostItem text={ item.text } likesCount={ item.likesCount } />) }
+				{
+					PostItemData.map(item =>
+						<PostItem text={ item.text } likesCount={ item.likesCount } />,
+					)
+				}
 			</div>
 		</div>
 	);

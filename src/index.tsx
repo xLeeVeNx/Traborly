@@ -3,10 +3,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Import state
-import { state } from './Redux/state';
+import { state } from './redux/state';
 
 // Import component
-import { App } from './Components/App/App';
+import { App } from './components/App/App';
 
 // Render
 ReactDOM.render(

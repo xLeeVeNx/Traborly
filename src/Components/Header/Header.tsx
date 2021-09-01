@@ -1,14 +1,20 @@
+// Import from libs
 import React from 'react';
 
+// Import styles
 import './Header.scss';
 
+// Import images
+import logo from '../../assets/images/logo.png';
+
+// Main code
 export const Header: React.FC = () => {
 	return (
 		<>
 			<header className="header">
 				<a className="logo" href="/">
 					<img className="logo__image"
-					     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/2048px-BMW_logo_%28gray%29.svg.png"
+					     src={ logo }
 					     alt="Logotype" />
 				</a>
 			</header>

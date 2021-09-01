@@ -1,11 +1,11 @@
+// Import from libs
 import React from 'react';
 
-interface IPostItemProps {
-    text: string;
-    likesCount: number;
-}
+// Import interfaces
+import { IPostItemProps } from '../../../../interface/Interfaces';
 
-const PostItem: React.FC<IPostItemProps> = props => {
+// Main code
+export const PostItem: React.FC<IPostItemProps> = props => {
     return (
         <div className="profile__post-item">
             <div>{props.text}</div>
@@ -13,5 +13,3 @@ const PostItem: React.FC<IPostItemProps> = props => {
         </div>
     );
 };
-
-export default PostItem;

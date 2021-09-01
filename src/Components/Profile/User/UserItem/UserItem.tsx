@@ -1,13 +1,12 @@
+// Import from libs
 import React from 'react';
 
-interface IUserItemProps {
-    text: string;
-}
+// Import interfaces
+import { IUserItemProps } from '../../../../interface/Interfaces';
 
-const UserItem: React.FC<IUserItemProps> = props => {
-    return (
-        <p className="profile__user-item">{props.text}</p>
-    );
+// Main code
+export const UserItem: React.FC<IUserItemProps> = props => {
+	return (
+		<p className="profile__user-item">{ props.text }</p>
+	);
 };
-
-export default UserItem;

@@ -1,28 +1,26 @@
+// Import from libs
 import React from 'react';
 
+// Import styles
 import './Navbar.scss';
 
-import MenuItem from './MenuItem/MenuItem';
+// Import components
+import { MenuItem } from './MenuItem/MenuItem';
 
-interface IMenuItem {
-	id: number;
-	text: string;
-	href: string;
-}
+// Import interfaces
+import { INavbarProps } from '../../interface/Interfaces';
 
-export const Navbar: React.FC = () => {
-	const MenuItemData: IMenuItem[] = [
-		{id: 1, text: 'Profile', href: '/profile'},
-		{id: 2, text: 'News', href: '/news'},
-		{id: 3, text: 'Messages', href: '/dialogs'},
-		{id: 4, text: 'Music', href: '/music'},
-		{id: 5, text: 'Settings', href: '/settings'},
-	];
-
+// Main code
+export const Navbar: React.FC<INavbarProps> = ({MenuItemData}) => {
 	return (
 		<nav className="menu">
 			<ul className="menu__list">
-				{ MenuItemData.map(item => <MenuItem text={ item.text } href={ item.href } key={ item.id } />) }
+				{
+					MenuItemData.map(item =>
+						<MenuItem key={ item.id } sourceImage={ item.sourceImage } href={ item.href }
+						          altText={ item.altText } text={ item.text } />,
+					)
+				}
 			</ul>
 		</nav>
 	);

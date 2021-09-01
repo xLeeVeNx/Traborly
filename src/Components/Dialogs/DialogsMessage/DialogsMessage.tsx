@@ -1,13 +1,15 @@
+// Import from libs
 import React from 'react';
 
+// Import styles
 import './DialogsMessage.scss';
 
-interface IDialogsMessageProps {
-	text: string;
-}
+// Import interfaces
+import { IDialogsMessageProps } from '../../../interface/Interfaces';
 
-export const DialogsMessage: React.FC<IDialogsMessageProps> = ({text}) => {
+// Main code
+export const DialogsMessage: React.FC<IDialogsMessageProps> = props => {
 	return (
-		<div className="dialogs__message">{ text }</div>
+		<div className="dialogs__message">{ props.text }</div>
 	);
 };

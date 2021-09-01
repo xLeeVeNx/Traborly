@@ -1,4 +1,4 @@
-// Import libs
+// Import from libs
 import React from 'react';
 
 // Import styles
@@ -9,7 +9,7 @@ import { Post } from './Post/Post';
 import { User } from './User/User';
 
 // Import interfaces
-import { IProfileProps } from '../../Interface/Interface';
+import { IProfileProps } from '../../interface/Interfaces';
 
 // Main code
 export const Profile: React.FC<IProfileProps> = ({PostItemData}) => {
@@ -20,7 +20,7 @@ export const Profile: React.FC<IProfileProps> = ({PostItemData}) => {
 				     src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
 				     alt="Background" />
 				<User />
-				<Post PostItemData={PostItemData} />
+				<Post PostItemData={ PostItemData } />
 			</div>
 		</section>
 	);
