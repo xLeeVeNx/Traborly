@@ -5,21 +5,17 @@ import React from 'react';
 // Import Components
 import { App } from './components/App/App';
 
-// Import interfaces
-import { IState } from './interface/Interfaces';
-
 // Import functions and state
-import { state, subscribe } from './redux/state';
-import { addPost } from './redux/state';
+import { store } from './redux/store';
 
-export const renderEntireTree = (state: IState) => {
+export const renderEntireTree = () => {
 	ReactDOM.render(
 		<React.StrictMode>
-			<App state={ state } addPost={ addPost } />
+			<App store={ store } />
 		</React.StrictMode>,
 		document.getElementById('root'),
 	);
 };
 
-renderEntireTree(state)
-subscribe(renderEntireTree);
+renderEntireTree();
+store.subscribe(renderEntireTree);

@@ -59,6 +59,14 @@ export interface IState {
 	FriendsPage: IFriendsProps;
 }
 
+export interface IStore {
+	_state: IState;
+	getState: () => IState;
+	_subscriber: () => void;
+	subscribe: (subscriber: () => void) => void;
+	addPost: (text: string) => void;
+}
+
 interface IProfilePage {
 	PostItemData: IPostItemData[];
 }
@@ -79,7 +87,6 @@ export interface INavbarProps {
 }
 
 export interface IAppProps {
-	state: IState;
-	addPost: (text: string) => void;
+	store: IStore;
 }
 
