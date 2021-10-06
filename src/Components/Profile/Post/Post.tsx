@@ -1,5 +1,5 @@
 // Import from libs
-import React from 'react';
+import React, { ChangeEvent, useState } from 'react';
 
 // Import styles
 import './Post.scss';
@@ -11,16 +11,39 @@ import { PostItem } from './PostItem/PostItem';
 import { IPostProps } from '../../../interface/Interfaces';
 
 // Main code
-export const Post: React.FC<IPostProps> = ({PostItemData}) => {
+export const Post: React.FC<IPostProps> = ({PostItemData, addPost}) => {
+	console.log(1);
+	const [ height, setHeight ] = useState(56);
+	const [ value, setValue ] = useState('');
+
+	const onChangeHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+		const target = event.currentTarget;
+
+		setValue(target.value);
+
+		if (target.scrollTop > 0) {
+			setHeight(target.scrollHeight);
+		}
+	};
+
+	const onClickHandler = () => {
+		addPost(value);
+		setValue('');
+	};
+
 	return (
 		<div className="profile__post">
-			<div className="profile__post-text">My posts</div>
-			<textarea className="profile__post-msg" />
-			<button className="profile__post-btn" type="submit">Send</button>
+			<textarea className="profile__post-msg" placeholder="Введите текст поста"
+			          style={ {height: height + 'px'} }
+			          onChange={onChangeHandler}
+			          value={ value }
+			/>
+			<div className="profile__post-text">Мои записи</div>
+			<button className="profile__post-btn" type="submit" onClick={ onClickHandler }>Send</button>
 			<div className="profile__post-items">
 				{
 					PostItemData.map(item =>
-						<PostItem text={ item.text } likesCount={ item.likesCount } />,
+						<PostItem key={ item.id } text={ item.text } likesCount={ item.likesCount } />,
 					)
 				}
 			</div>

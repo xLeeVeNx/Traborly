@@ -9,8 +9,15 @@ import friends from '../assets/images/icons/friends.svg';
 import settings from '../assets/images/icons/settings.svg';
 import user from '../assets/images/user.svg';
 
-// Interface
+// Import interfaces
 import { IState } from '../interface/Interfaces';
+
+// Functions
+let renderEntireTree = (state: IState) => {};
+
+export const subscribe = (observer: (state: IState) => void) => {
+	renderEntireTree = observer; // observer !== publisher-subscriber === patterns
+}
 
 // State
 export const state: IState = {
@@ -54,4 +61,10 @@ export const state: IState = {
 			{id: v1(), sourceImage: user, altText: 'Anonymous', fullName: 'Андрей Ким'},
 		],
 	},
+};
+
+// Functions changing state
+export const addPost = (text: string) => {
+	state.ProfilePage.PostItemData.push({id: v1(), text, likesCount: 0});
+	renderEntireTree(state);
 };

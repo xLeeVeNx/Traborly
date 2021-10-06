@@ -7,6 +7,9 @@ import { IUserItemProps } from '../../../../interface/Interfaces';
 // Main code
 export const UserItem: React.FC<IUserItemProps> = props => {
 	return (
-		<p className="profile__user-item">{ props.text }</p>
+		<li className="profile__user-item">
+			<span className="profile__user-label">{ props.label }</span>
+			<span className="profile__user-value">{ props.value }</span>
+		</li>
 	);
 };

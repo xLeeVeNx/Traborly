@@ -1,0 +1,26 @@
+.profile {
+  &__post {
+    margin: 20px;
+  }
+
+  &__post-msg {
+    padding: 10px 5px 10px 10px;
+
+    max-width: 350px;
+    width: 100%;
+    height: auto;
+
+    font-size: 14px;
+
+    border: 1px solid #DCE1E6;
+    border-radius: 5px;
+
+    resize: none;
+    outline: none;
+    overflow: hidden;
+
+    &:focus {
+      border: 1px solid #929497;
+    }
+  }
+}

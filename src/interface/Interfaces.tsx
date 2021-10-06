@@ -19,10 +19,12 @@ export interface IPostItemProps {
 
 export interface IPostProps {
 	PostItemData: IPostItemData[];
+	addPost: (text: string) => void;
 }
 
 export interface IUserItemProps {
-	text: string;
+	label: string;
+	value: string;
 }
 
 export interface IDialogsItemProps {
@@ -52,9 +54,13 @@ export interface IMenuItemProps {
 
 export interface IState {
 	Navbar: INavbarProps;
-	ProfilePage: IProfileProps;
+	ProfilePage: IProfilePage;
 	DialogsPage: IDialogsProps;
 	FriendsPage: IFriendsProps;
+}
+
+interface IProfilePage {
+	PostItemData: IPostItemData[];
 }
 
 export interface IFriendsProps {
@@ -74,5 +80,6 @@ export interface INavbarProps {
 
 export interface IAppProps {
 	state: IState;
+	addPost: (text: string) => void;
 }
 

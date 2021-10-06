@@ -19,8 +19,8 @@ import { Settings } from '../Settings/Settings';
 import { IAppProps } from '../../interface/Interfaces';
 
 // Main code
-export const App: React.FC<IAppProps> = ({state}) => {
-	const ProfileRoute = () => <Profile PostItemData={ state.ProfilePage.PostItemData } />;
+export const App: React.FC<IAppProps> = ({state, addPost}) => {
+	const ProfileRoute = () => <Profile PostItemData={ state.ProfilePage.PostItemData } addPost={ addPost } />;
 	const NewsRoute = () => <News />;
 	const DialogsRoute = () => <Dialogs
 		DialogsItemData={ state.DialogsPage.DialogsItemData }
