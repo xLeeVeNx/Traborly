@@ -1,18 +1,14 @@
 // Import from libs
 import React, { ChangeEvent, useState } from 'react';
 
-// Import styles
-import './Post.scss';
-
 // Import components
 import { PostItem } from './PostItem/PostItem';
 
 // Import interfaces
-import { IPostProps } from '../../../interface/Interfaces';
+import { IPostProps } from './IPost';
 
 // Main code
-export const Post: React.FC<IPostProps> = ({PostItemData, addPost}) => {
-	console.log(1);
+export const Post: React.FC<IPostProps> = ({PostItemData, dispatch}) => {
 	const [ height, setHeight ] = useState(56);
 	const [ value, setValue ] = useState('');
 
@@ -27,7 +23,7 @@ export const Post: React.FC<IPostProps> = ({PostItemData, addPost}) => {
 	};
 
 	const onClickHandler = () => {
-		addPost(value);
+		dispatch({type: 'ADD-POST', text: value});
 		setValue('');
 	};
 

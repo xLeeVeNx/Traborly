@@ -3,8 +3,8 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 // Import styles
-import './fonts.scss';
-import './App.scss';
+import './styles/fonts.scss';
+import './styles/App.scss';
 
 // Import components
 import { Header } from '../Header/Header';
@@ -16,14 +16,15 @@ import { News } from '../News/News';
 import { Settings } from '../Settings/Settings';
 
 // Import interfaces
-import { IAppProps } from '../../interface/Interfaces';
+import { IAppProps } from './IApp';
 
 // Main code
 export const App: React.FC<IAppProps> = ({store}) => {
 	const state = store.getState();
 
 	const ProfileRoute = () => <Profile PostItemData={ state.ProfilePage.PostItemData }
-	                                    addPost={ store.addPost.bind(store) } />;
+	                                    UserItemData={ state.ProfilePage.UserItemData }
+	                                    dispatch={ store.dispatch.bind(store) } />;
 	const NewsRoute = () => <News />;
 	const DialogsRoute = () => <Dialogs
 		DialogsItemData={ state.DialogsPage.DialogsItemData }

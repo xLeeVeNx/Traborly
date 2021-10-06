@@ -1,30 +1,26 @@
 // Import from libs
 import React from 'react';
 
-// Import styles
-import './User.scss';
-
 // Import components
 import { UserItem } from './UserItem/UserItem';
+import { UserImage } from './UserImage/UserImage';
 
-// Import images
-import avatar from '../../../assets/images/myAvatar.jpg';
+// Import interfaces
+import { IUserProps } from './IUser';
 
 // Main code
-export const User: React.FC = () => {
+export const User: React.FC<IUserProps> = ({UserItemData}) => {
 	return (
 		<div className="profile__user">
-			<img className="profile__user-img"
-			     src={avatar}
-			     alt="Avatar" />
+			<UserImage />
 			<div className="profile__user-info">
 				<div className="profile__user-name">Дамиль Бердыев</div>
 				<ul className="profile__user-items">
-					<UserItem label="День рождение:" value="29 сентября 2004 г." />
-					<UserItem label="Город:" value="Талдыкорган" />
-					<UserItem label="Место учёбы:" value="Школа" />
-					<UserItem label="Любимый фильм:" value="Форсаж" />
-					<UserItem label="Веб-сайт:" value="Отсутствует" />
+					{
+						UserItemData.map(item =>
+							<UserItem key={ item.id } label={ item.label } value={ item.label } />
+						)
+					}
 				</ul>
 			</div>
 		</div>

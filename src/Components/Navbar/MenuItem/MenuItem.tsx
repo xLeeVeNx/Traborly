@@ -2,11 +2,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// Import styles
-import './MenuItem.scss';
-
 // Import interfaces
-import { IMenuItemProps } from '../../../interface/Interfaces';
+import { IMenuItemProps } from './IMenuItem';
 
 // Main code
 export const MenuItem: React.FC<IMenuItemProps> = props => {

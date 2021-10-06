@@ -1,0 +1,49 @@
+.menu {
+  margin: 5px;
+
+  min-height: calc(100vh - 115px);
+
+  background-color: #FFFFFF;
+
+  border: 1px solid #DCE1E6;
+  border-radius: 5px;
+
+  &__list {
+    padding: 10px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    padding: 5px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    &:hover {
+      background-color: #EDEEF0;
+    }
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+
+    object-fit: cover;
+  }
+
+  &__text {
+    margin-left: 10px;
+
+    font-size: 14px;
+  }
+}

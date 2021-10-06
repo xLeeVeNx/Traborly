@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import interfaces
-import { IPostItemProps } from '../../../../interface/Interfaces';
+import { IPostItemProps } from './IPostItem';
 
 // Main code
 export const PostItem: React.FC<IPostItemProps> = props => {

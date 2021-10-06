@@ -1,9 +1,6 @@
 // Import from libs
 import { v1 } from 'uuid';
 
-// Import interfaces
-import { IPostItemData, IStore } from '../interface/Interfaces';
-
 // Import images
 import profile from '../assets/images/icons/profile.svg';
 import news from '../assets/images/icons/news.svg';
@@ -11,6 +8,10 @@ import message from '../assets/images/icons/message.svg';
 import friends from '../assets/images/icons/friends.svg';
 import settings from '../assets/images/icons/settings.svg';
 import user from '../assets/images/user.svg';
+
+// Import interfaces
+import { IStore } from './IStore';
+import { IPostItemData } from '../components/Profile/IProfile';
 
 // Store
 export const store: IStore = {
@@ -30,6 +31,13 @@ export const store: IStore = {
 				{id: v1(), text: 'Post #2', likesCount: 5},
 				{id: v1(), text: 'Post #3', likesCount: 14},
 			],
+			UserItemData: [
+				{id: v1(), label: 'День рождение:', value: '29 сентября 2004 г.'},
+				{id: v1(), label: 'Город:', value: 'Талдыкорган'},
+				{id: v1(), label: 'Место учёбы:', value: 'Школа'},
+				{id: v1(), label: 'Любимый фильм:', value: 'Форсаж'},
+				{id: v1(), label: 'Веб-сайт:', value: 'Отсутствует'},
+			]
 		},
 		DialogsPage: {
 			DialogsItemData: [
@@ -56,21 +64,27 @@ export const store: IStore = {
 			],
 		},
 	},
+	_subscriber() {},
+
 	getState() {
 		return this._state;
-	},
-	_subscriber() {
 	},
 	subscribe(subscriber) {
 		this._subscriber = subscriber;
 	},
-	addPost(text) {
-		const newPost: IPostItemData = {
-			id: v1(),
-			text,
-			likesCount: 0,
-		};
-		this._state.ProfilePage.PostItemData.push(newPost);
-		this._subscriber();
-	},
+
+	dispatch(action) {
+		debugger
+		switch (action.type) {
+			case 'ADD-POST': {
+				const newPost: IPostItemData = {
+					id: v1(),
+					text: action.text,
+					likesCount: 0,
+				};
+				this._state.ProfilePage.PostItemData.push(newPost);
+				this._subscriber();
+			}
+		}
+	}
 };

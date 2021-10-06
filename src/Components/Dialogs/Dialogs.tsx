@@ -2,14 +2,14 @@
 import React from 'react';
 
 // Import styles
-import './Dialogs.scss';
+import './styles/Dialogs.scss';
 
 // Import components
 import { DialogsItem } from './DialogsItem/DialogsItem';
 import { DialogsMessage } from './DialogsMessage/DialogsMessage';
 
 // Import interfaces
-import { IDialogsProps } from '../../interface/Interfaces';
+import { IDialogsProps } from './IDialogs';
 
 // Main code
 export const Dialogs: React.FC<IDialogsProps> = ({DialogsItemData, DialogsMessageData}) => {

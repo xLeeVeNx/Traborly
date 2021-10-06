@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Import interfaces
-import { IUserItemProps } from '../../../../interface/Interfaces';
+import { IUserItemProps } from './IUserItem';
 
 // Main code
 export const UserItem: React.FC<IUserItemProps> = props => {

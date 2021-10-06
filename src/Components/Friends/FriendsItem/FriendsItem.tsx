@@ -1,11 +1,8 @@
 // Import from libs
 import React from 'react';
 
-// Import styles
-import './FriendsItem.scss';
-
 // Import interfaces
-import { IFriendsItemProps } from '../../../interface/Interfaces';
+import { IFriendsItemProps } from './IFriendsItem';
 
 // Main code
 export const FriendsItem: React.FC<IFriendsItemProps> = props => {
