@@ -7,11 +7,11 @@ import './styles/Friends.scss';
 // Import components
 import { FriendsItem } from './FriendsItem/FriendsItem';
 
-// Import interfaces
-import { IFriendsProps } from './IFriends';
+// Import types
+import { FriendsPropsType } from './FriendsType';
 
 // Main code
-export const Friends: React.FC<IFriendsProps> = ({FriendsItemData}) => {
+export const Friends: React.FC<FriendsPropsType> = ({FriendsItemData}) => {
 	return (
 		<section className="friends">
 			<div className="friends__inner">

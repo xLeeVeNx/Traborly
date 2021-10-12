@@ -1,10 +1,10 @@
-export interface IUserItemData {
+export type UserItemDataType = {
 	id: string;
 	label: string;
 	value: string;
-}
+};
 
-export interface IUserItemProps {
+export type UserItemPropsType = {
 	label: string;
 	value: string;
-}
+};

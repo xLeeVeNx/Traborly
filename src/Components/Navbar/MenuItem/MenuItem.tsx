@@ -2,11 +2,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// Import interfaces
-import { IMenuItemProps } from './IMenuItem';
+// Import types
+import { MenuItemPropsType } from './MenuItemType';
 
 // Main code
-export const MenuItem: React.FC<IMenuItemProps> = props => {
+export const MenuItem: React.FC<MenuItemPropsType> = props => {
 	return (
 		<li className="menu__item">
 			<NavLink className="menu__link" to={ props.href }>

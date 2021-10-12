@@ -9,11 +9,11 @@ import { Post } from './Post/Post';
 import { User } from './User/User';
 import { Image } from './Image/Image';
 
-// Import interfaces
-import { IProfileProps } from './IProfile';
+// Import types
+import { ProfilePropsType } from './ProfileType';
 
 // Main code
-export const Profile: React.FC<IProfileProps> = ({PostItemData, UserItemData, dispatch}) => {
+export const Profile: React.FC<ProfilePropsType> = ({PostItemData, UserItemData, dispatch}) => {
 	return (
 		<section className="profile">
 			<div className="profile__inner">

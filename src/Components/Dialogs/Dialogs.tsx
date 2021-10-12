@@ -7,12 +7,13 @@ import './styles/Dialogs.scss';
 // Import components
 import { DialogsItem } from './DialogsItem/DialogsItem';
 import { DialogsMessage } from './DialogsMessage/DialogsMessage';
+import { SendMessage } from './SendMessage/SendMessage';
 
-// Import interfaces
-import { IDialogsProps } from './IDialogs';
+// Import types
+import { DialogsPropsType } from './DialogsType';
 
 // Main code
-export const Dialogs: React.FC<IDialogsProps> = ({DialogsItemData, DialogsMessageData}) => {
+export const Dialogs: React.FC<DialogsPropsType> = ({DialogsItemData, DialogsMessageData, dispatch}) => {
 	return (
 		<section className="dialogs">
 			<div className="dialogs__inner">
@@ -21,6 +22,7 @@ export const Dialogs: React.FC<IDialogsProps> = ({DialogsItemData, DialogsMessag
 				</div>
 				<div className="dialogs__messages">
 					{ DialogsMessageData.map(item => <DialogsMessage text={ item.text } key={ item.id } />) }
+					<SendMessage dispatch={dispatch} />
 				</div>
 			</div>
 		</section>

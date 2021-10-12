@@ -1,11 +1,11 @@
 // Import from libs
 import React from 'react';
 
-// Import interfaces
-import { IPostItemProps } from './IPostItem';
+// Import types
+import { PostItemPropsType } from './PostItemType';
 
 // Main code
-export const PostItem: React.FC<IPostItemProps> = props => {
+export const PostItem: React.FC<PostItemPropsType> = props => {
     return (
         <div className="profile__post-item">
             <div>{props.text}</div>

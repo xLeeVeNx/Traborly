@@ -1,11 +1,11 @@
 // Import from libs
 import React from 'react';
 
-// Import interfaces
-import { IDialogsMessageProps } from './IDialogsMessage';
+// Import types
+import { DialogsMessagePropsType } from './DialogsMessageType';
 
 // Main code
-export const DialogsMessage: React.FC<IDialogsMessageProps> = props => {
+export const DialogsMessage: React.FC<DialogsMessagePropsType> = props => {
 	return (
 		<div className="dialogs__message">{ props.text }</div>
 	);

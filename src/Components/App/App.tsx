@@ -15,11 +15,11 @@ import { Friends } from '../Friends/Friends';
 import { News } from '../News/News';
 import { Settings } from '../Settings/Settings';
 
-// Import interfaces
-import { IAppProps } from './IApp';
+// Import types
+import { AppPropsType } from './AppType';
 
 // Main code
-export const App: React.FC<IAppProps> = ({store}) => {
+export const App: React.FC<AppPropsType> = ({store}) => {
 	const state = store.getState();
 
 	const ProfileRoute = () => <Profile PostItemData={ state.ProfilePage.PostItemData }
@@ -29,6 +29,7 @@ export const App: React.FC<IAppProps> = ({store}) => {
 	const DialogsRoute = () => <Dialogs
 		DialogsItemData={ state.DialogsPage.DialogsItemData }
 		DialogsMessageData={ state.DialogsPage.DialogsMessageData }
+		dispatch={ store.dispatch.bind(store) }
 	/>;
 	const FriendsRoute = () => <Friends FriendsItemData={ state.FriendsPage.FriendsItemData } />;
 	const SettingsRoute = () => <Settings />;

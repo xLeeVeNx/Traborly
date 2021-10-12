@@ -5,11 +5,11 @@ import React from 'react';
 import { UserItem } from './UserItem/UserItem';
 import { UserImage } from './UserImage/UserImage';
 
-// Import interfaces
-import { IUserProps } from './IUser';
+// Import types
+import { UserPropsType } from './UserType';
 
 // Main code
-export const User: React.FC<IUserProps> = ({UserItemData}) => {
+export const User: React.FC<UserPropsType> = ({UserItemData}) => {
 	return (
 		<div className="profile__user">
 			<UserImage />

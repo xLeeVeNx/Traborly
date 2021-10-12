@@ -4,11 +4,12 @@ import React, { ChangeEvent, useState } from 'react';
 // Import components
 import { PostItem } from './PostItem/PostItem';
 
-// Import interfaces
-import { IPostProps } from './IPost';
+// Import types
+import { PostPropsType } from './PostType';
+import { addPostAC } from '../../../redux/store';
 
 // Main code
-export const Post: React.FC<IPostProps> = ({PostItemData, dispatch}) => {
+export const Post: React.FC<PostPropsType> = ({PostItemData, dispatch}) => {
 	const [ height, setHeight ] = useState(56);
 	const [ value, setValue ] = useState('');
 
@@ -23,7 +24,7 @@ export const Post: React.FC<IPostProps> = ({PostItemData, dispatch}) => {
 	};
 
 	const onClickHandler = () => {
-		dispatch({type: 'ADD-POST', text: value});
+		dispatch(addPostAC(value));
 		setValue('');
 	};
 
@@ -31,7 +32,7 @@ export const Post: React.FC<IPostProps> = ({PostItemData, dispatch}) => {
 		<div className="profile__post">
 			<textarea className="profile__post-msg" placeholder="Введите текст поста"
 			          style={ {height: height + 'px'} }
-			          onChange={onChangeHandler}
+			          onChange={ onChangeHandler }
 			          value={ value }
 			/>
 			<div className="profile__post-text">Мои записи</div>
@@ -39,7 +40,7 @@ export const Post: React.FC<IPostProps> = ({PostItemData, dispatch}) => {
 			<div className="profile__post-items">
 				{
 					PostItemData.map(item =>
-						<PostItem key={ item.id } text={ item.text } likesCount={ item.likesCount } />,
+						<PostItem key={ item.id } text={ item.text } likesCount={ item.likesCount } />
 					)
 				}
 			</div>

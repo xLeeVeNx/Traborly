@@ -1,11 +1,11 @@
 // Import from libs
 import React from 'react';
 
-// Import interfaces
-import { IUserItemProps } from './IUserItem';
+// Import types
+import { UserItemPropsType } from './UserItemType';
 
 // Main code
-export const UserItem: React.FC<IUserItemProps> = props => {
+export const UserItem: React.FC<UserItemPropsType> = props => {
 	return (
 		<li className="profile__user-item">
 			<span className="profile__user-label">{ props.label }</span>

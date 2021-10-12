@@ -1,11 +1,11 @@
 // Import from libs
 import React from 'react';
 
-// Import interfaces
-import { IFriendsItemProps } from './IFriendsItem';
+// Import types
+import { FriendsItemPropsType } from './FriendsItemType';
 
 // Main code
-export const FriendsItem: React.FC<IFriendsItemProps> = props => {
+export const FriendsItem: React.FC<FriendsItemPropsType> = props => {
 	return (
 		<div className="friends__item">
 			<img className="friends__item-img" src={ props.sourceImage } alt={ props.altText } />

@@ -2,11 +2,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-// Import interfaces
-import { IDialogsItem } from './IDialogsItem';
+// Import types
+import { DialogsItemPropsType } from './DialogsItemType';
 
 // Main code
-export const DialogsItem: React.FC<IDialogsItem> = ({text, id}) => {
+export const DialogsItem: React.FC<DialogsItemPropsType> = ({text, id}) => {
 	const path = `/dialogs/${ id }`;
 
 	return (
