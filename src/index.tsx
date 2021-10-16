@@ -6,7 +6,7 @@ import React from 'react';
 import { App } from './components/App/App';
 
 // Import functions and state
-import { store } from './redux/store';
+import { store } from './redux/redux-store';
 
 export const renderEntireTree = () => {
 	ReactDOM.render(

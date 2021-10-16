@@ -9,7 +9,24 @@ import { ActionsType } from '../storeType';
 // Import constants
 import { ADD_POST } from '../../utils/constants';
 
-export const profileReducer = (state: ProfilePageType, action: ActionsType) => {
+// InitialState
+const initialState: ProfilePageType = {
+	PostItemData: [
+		{id: v1(), text: 'Post #1', likesCount: 10},
+		{id: v1(), text: 'Post #2', likesCount: 5},
+		{id: v1(), text: 'Post #3', likesCount: 14}
+	],
+	UserItemData: [
+		{id: v1(), label: 'День рождение:', value: '29 сентября 2004 г.'},
+		{id: v1(), label: 'Город:', value: 'Талдыкорган'},
+		{id: v1(), label: 'Место учёбы:', value: 'Школа'},
+		{id: v1(), label: 'Любимый фильм:', value: 'Форсаж'},
+		{id: v1(), label: 'Веб-сайт:', value: 'Отсутствует'}
+	]
+};
+
+// Reducer
+export const profileReducer = (state = initialState, action: ActionsType): ProfilePageType => {
 	switch (action.type) {
 		case ADD_POST: {
 			const newPost: PostItemDataType = {
