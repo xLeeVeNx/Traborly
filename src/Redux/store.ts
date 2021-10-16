@@ -11,11 +11,8 @@ import user from '../assets/images/user.svg';
 
 // Import types
 import { StoreType } from './storeType';
-import { PostItemDataType } from '../components/Profile/Post/PostType';
-import { DialogsDataType } from '../components/Dialogs/DialogsType';
-
-// Import constants
-import { ADD_POST, SEND_MESSAGE } from '../utils/constants';
+import { dialogsReducer } from './reducers/dialogsReducer';
+import { profileReducer } from './reducers/profileReducer';
 
 // Store
 export const store: StoreType = {
@@ -79,40 +76,9 @@ export const store: StoreType = {
 	},
 
 	dispatch(action) {
-		switch (action.type) {
-			case ADD_POST: {
-				const newPost: PostItemDataType = {
-					id: v1(),
-					text: action.text,
-					likesCount: 0
-				};
-				this._state.ProfilePage.PostItemData = [ ...this._state.ProfilePage.PostItemData, newPost ];
-				this._subscriber();
-				break;
-			}
-			case SEND_MESSAGE: {
-				const newMessage: DialogsDataType = {
-					id: v1(),
-					text: action.text
-				};
-				this._state.DialogsPage.DialogsMessageData = [ ...this._state.DialogsPage.DialogsMessageData, newMessage ];
-				this._subscriber();
-				break;
-			}
-		}
-	}
-};
+		this._state.ProfilePage = profileReducer(this._state.ProfilePage, action);
+		this._state.DialogsPage = dialogsReducer(this._state.DialogsPage, action);
 
-// ActionCreators
-export const addPostAC = (text: string) => {
-	return {
-		type: ADD_POST,
-		text
-	} as const;
-};
-export const sendMessageAC = (text: string) => {
-	return {
-		type: SEND_MESSAGE,
-		text
-	} as const;
+		this._subscriber();
+	}
 };

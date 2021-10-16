@@ -5,7 +5,7 @@ import React, { ChangeEvent, useState } from 'react';
 import { SendMessagePropsType } from './SendMessageType';
 
 // Import AC
-import { sendMessageAC } from '../../../redux/store';
+import { sendMessageAC } from '../../../redux/reducers/dialogsReducer';
 
 // Main code
 export const SendMessage: React.FC<SendMessagePropsType> = ({dispatch}) => {
@@ -21,7 +21,7 @@ export const SendMessage: React.FC<SendMessagePropsType> = ({dispatch}) => {
 	return (
 		<div className="dialogs__send">
 			<textarea className="dialogs__send-message" value={ value } onChange={ onChangeTextareaHandler } />
-			<button className="dialogs__send-button" onClick={onClickButtonHandler}>Отправить</button>
+			<button className="dialogs__send-button" onClick={ onClickButtonHandler }>Отправить</button>
 		</div>
 	);
 };

@@ -6,7 +6,7 @@ import { PostItem } from './PostItem/PostItem';
 
 // Import types
 import { PostPropsType } from './PostType';
-import { addPostAC } from '../../../redux/store';
+import { addPostAC } from '../../../redux/reducers/profileReducer';
 
 // Main code
 export const Post: React.FC<PostPropsType> = ({PostItemData, dispatch}) => {

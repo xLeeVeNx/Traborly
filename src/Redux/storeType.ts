@@ -2,7 +2,8 @@ import { ProfilePageType } from '../components/Profile/ProfileType';
 import { DialogsPageType } from '../components/Dialogs/DialogsType';
 import { FriendsPropsType } from '../components/Friends/FriendsType';
 import { NavbarPropsType } from '../components/Navbar/NavbarType';
-import { sendMessageAC, addPostAC } from './store';
+import { sendMessageAC } from './reducers/dialogsReducer';
+import { addPostAC } from './reducers/profileReducer';
 
 export type addPostActionType = ReturnType<typeof addPostAC>;
 export type addMessageActionType = ReturnType<typeof sendMessageAC>;
